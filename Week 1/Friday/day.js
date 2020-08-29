@@ -156,3 +156,14 @@ var arrayOfObjects = [
 ]
 
 // JSON = JavaScript Object Notation
+
+var buah = [
+    {
+        namaBuah : "Apel",
+        kuantitas : 10
+    },
+    {
+        namaBuah : "Ceri",
+        kuantitas : 5
+    }
+]
