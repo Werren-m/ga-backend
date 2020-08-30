@@ -1,0 +1,27 @@
+stages:
+  - announce
+
+announce-material:
+  stage: announce
+  script:
+    - curl --data chat_id=$TELEGRAM_CHAT_ID --data-urlencode text="Hello, new materials coming in hot, go grab it fast!" $TELEGRAM_BOT_URL/sendMessage
+    - curl --data chat_id=$TELEGRAM_CHAT_ID --data-urlencode text="https://gitlab.com/binar-x-glints-academy/batch-6/backend/materials/-/tree/material/" $TELEGRAM_BOT_URL/sendMessage
+  only:
+    - material
+
+announce-task:
+  stage: announce
+  script:
+    - curl --data chat_id=$TELEGRAM_CHAT_ID --data-urlencode text="Don't forget to do your task!" $TELEGRAM_BOT_URL/sendMessage
+    - curl --data chat_id=$TELEGRAM_CHAT_ID --data-urlencode text="https://gitlab.com/binar-x-glints-academy/batch-6/backend/materials/-/tree/task/" $TELEGRAM_BOT_URL/sendMessage
+  only:
+    - task    
+
+announce-challenge:
+  stage: announce
+  script:
+    - curl --data chat_id=$TELEGRAM_CHAT_ID --data-urlencode text="Code Challenge, alert!" $TELEGRAM_BOT_URL/sendMessage
+    - curl --data chat_id=$TELEGRAM_CHAT_ID --data-urlencode text="https://gitlab.com/binar-x-glints-academy/batch-6/backend/materials" $TELEGRAM_BOT_URL/sendMessage
+  only:
+    - master 
+

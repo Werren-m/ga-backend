@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Coca Cola",
+    "price": 5000,
+    "stock": 10
+  },
+  {
+    "id": 2,
+    "name": "Pepsi",
+    "price": 5000,
+    "stock": 10
+  },
+  {
+    "id": 3,
+    "name": "Sprite",
+    "price": 5000,
+    "stock": 5
+  },
+  {
+    "id": 4,
+    "name": "Big Cola",
+    "price": 4000,
+    "stock": 0
+  },
+  {
+    "id": 5,
+    "name": "Tango",
+    "price": 10000,
+    "stock": 4
+  },
+  {
+    "id": 6,
+    "name": "Red Bull Energy Drink",
+    "price": 19000,
+    "stock": 9
+  },
+  {
+    "id": 7,
+    "name": "Indomie Goreng",
+    "price": 2000,
+    "stock": 10
+  },
+  {
+    "id": 8,
+    "name": "Feast",
+    "price": 4500,
+    "stock": 1
+  }
+]

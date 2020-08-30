@@ -1,0 +1,20 @@
+FLip Learning
+20% Lecture / SYnchronus
+80% Belajar Mandiri / Asynchronus
+
+PERKENALAN
+
+1. Nama kalian
+2. Status kalian skarang
+3. Background 
+
+4. Kenapa gabung GA
+5. Tujuan dan rencana ke depan setelah ikut kls Backend
+
+MATERI Hari ini :
+1. What is back end?
+scope, career path.
+
+2. Node Js
+
+3. Terminal -> Git / Version control
