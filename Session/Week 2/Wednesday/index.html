@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+</head>
+<body>
+    <h3>To Do List</h3>
+    <form onsubmit="return submitTask()">
+        <div>
+            <label for="task">Task</label>
+            <input type="text" name="task" id="task">
+
+            <input type="submit" value="Submit Task">
+        </div>
+    </form>
+    <button onclick="read()">Test</button>
+    <div>
+        <table border="1" cellspacing="0">
+            <thead>
+                <tr>
+                    
+                    <th>No</th>
+                    <th>Task</th>
+                    <th>Create</th>
+                </tr>
+            </thead>
+            <tbody id="list">
+            </tbody>
+        </table>
+    </div>
+    <script>
+        // document.querySelector('form').onsubmit = submitTask()
+        var tasks = []
+        function submitTask(){
+            let taskName = document.getElementById('task').value
+            console.log(taskName)
+            tasks.push({
+                id : 1,
+                title : taskName,
+                created : new Date().toLocaleDateString()
+            })
+            return false
+        }
+        function read(){
+            let list = document.getElementById('list')
+            list.innerHTML = ""
+            for(let i=0; i<tasks.length; i++){
+                
+                let xmlString = `
+                    <tr>
+                        <td>${tasks[i].id}}</td>    
+                        <td>${tasks[i].title}</td>    
+                        <td>${tasks[i].created}</td>    
+                    </tr>
+                `
+                list.insertAdjacentHTML('beforeend',xmlString)
+            }
+            console.log(tasks)
+            // return false
+        }
+    </script>
+</body>
+</html>
