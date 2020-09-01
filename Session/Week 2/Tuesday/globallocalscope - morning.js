@@ -22,10 +22,11 @@
 // var books = ["Math","Chemistry"];
 
 // console.log(books)
-// books.push("Physics");
+// books.push("Physics","Biology");
 // console.log(books)
 // books.unshift("Indonesia");
 // console.log(books)
+// books.pop();
 // books.pop();
 // console.log(books)
 // books.sort();
@@ -36,7 +37,7 @@ var tasks = [];
 
 function addTask(task){
     tasks.push(task);
-    console.log("Task berhasil di input yeah!");
+    console.log(`"${task}" berhasil di input yeah!`);
 }
 
 function getTask(){
@@ -72,6 +73,7 @@ function deleteTask(task){
                 }
             }
             tasks = temp;
+            console.log("Task deleted!")
         }else {
             console.log("Tidak ada task tsb thanks.")
         }
@@ -91,23 +93,24 @@ getTask();
 
 
 // var numbers = [5,2,10,7,1];
-// var search = 10;
+// var search = 1;
 
 // function searchNumber(search){
-//     // var result;
+//     var result;
 
 //     for(let i=0; i<numbers.length; i++){
+//         // console.log(numbers[i]);
 //         if(numbers[i] === search){
-//             // result = true;
-//             // break;
-//             return true
+//             result = true;
+//             break;
+//             // return true
 //         }
-//         // else {
-//         //     result = false;
-//         // }
+//         else {
+//             result = false;
+//         }
 //     }
-//     return false;
+//     // return false;
 
-//     // return result;
+//     return result;
 // }
 // console.log(searchNumber(search));

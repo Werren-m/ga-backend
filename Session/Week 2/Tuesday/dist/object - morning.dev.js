@@ -14,7 +14,7 @@
 // }
 // greet("jack");
 // var temp = greets("jake");
-// console.log(temp)
+// console.log(temp);
 // function nextGreet(greetings){
 //     var salam = greets("clara.");
 //     var combineGreet = salam + greetings;
@@ -23,12 +23,8 @@
 // console.log(nextGreet("How are you?"));
 //OBJECT
 //Kumpulan nilai yang memiliki key.
-// var items = [
-//     ["Wallet","Bag","Rucksak"],
-//     ["Lipstick","Foundation","Eyeliner"],
-//     ["T-shirt","shirt","pants"]
-// ]
-//Array in object
+var items = [["Wallet", "Bag", "Rucksack"], ["Lipstick", "Foundation", "Eyeliner"], ["T-shirt", "shirt", "pants"]]; //Array in object
+
 var items = {
   storage: ["Wallet", "Bag", "Rucksak"],
   makeup: ["Lipstick", "Foundation", "Eyeliner"],
@@ -45,14 +41,18 @@ var mahasiswa = {
     return Math.pow(angka, 3);
   },
   mentionThis: function mentionThis() {
+    // console.log(this)
+    //Template Literal
     console.log("".concat(this.nama, " has GPA : ").concat(this.ipk));
-  }
-}; // console.log(mahasiswa.nama)
-// console.log(mahasiswa["ipk"])
-// console.log(mahasiswa.ableToCode)
-// console.log(mahasiswa.sayHello())
-// console.log(mahasiswa.computeMath(5))
-// mahasiswa.mentionThis()
+  },
+  "is Eaten": true
+}; // console.log(mahasiswa.nama);
+// console.log(mahasiswa["ipk"]);
+// console.log(mahasiswa["ableToCode"]);
+// console.log(mahasiswa["is Eaten"]);
+// console.log(mahasiswa.sayHello());
+// console.log(mahasiswa.computeMath(5));
+// mahasiswa.mentionThis();
 //Array of Objects
 
 var storage = [{
@@ -64,8 +64,12 @@ var storage = [{
 }, {
   name: "Seagate NVME",
   size: 256
-}];
-console.log(storage[0]["name"]); //Object in object -> Nested Object
+}]; // console.log(storage.length);
+// console.log(storage[0]["name"]);
+// console.log(storage[0].size);
+// var index = storage.length - 1;
+// console.log(storage[index]);
+//Object in object -> Nested Object
 
 var fruits = {
   type: {
@@ -76,8 +80,7 @@ var fruits = {
     city: "Jakarta",
     value: 100000
   }
-};
-console.log(fruits.type.name);
+}; // console.log(fruits.type["name"]);
 
 function createObject(name, ipk) {
   var temp = {
