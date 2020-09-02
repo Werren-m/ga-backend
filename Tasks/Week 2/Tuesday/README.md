@@ -1,33 +1,31 @@
-# Exercise 
+# Exercise Object and Function
 
-## 1. Check odd or even number
+## 1. Find the Faktor Persekutuan terbesar
 ```javascript
-    //Test Case
-    //Input 5 -> Output Odd
-    //Input 10 -> Output Even
+    Buat sebuah function FPB
+    function fpb(number1 , number2){
+        //code here
+    }
+    
+    //Test
+    console.log(fpb(30,50)) //10
+    console.log(fpb(12,15)) //3
+    console.log(fpb(17,35)) //3
 ```
 
-## 2. Print the n first numbers
+## 2. Print the n first Prim numbers
 ```javascript
+    function checkPrime(number){
+
+    }
+    function print(n){
+        
+    }
     //Test Case
-
-    //Input 15
-    Output
-    1 
-    2
-    3 kelipatan 3
-    4
-    5 kelipatan 5
-    6 kelipatan 3
-    7
-    8
-    9 kelipatan 3
-    10 kelipatan 5
-    .
-    .
-    .
-    15 kelipatan 3 dan 5
-
+    print(3); //2 3 5
+    print(5); //2 3 5 7 11 
+    print(0); //1
+    
 ```
 ## 3. 
 ```javascript
