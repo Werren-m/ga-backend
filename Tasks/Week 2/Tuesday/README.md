@@ -2,7 +2,6 @@
 
 ## 1. Find the Faktor Persekutuan terbesar
 ```javascript
-    Buat sebuah function FPB
     function fpb(number1 , number2){
         //code here
     }
@@ -16,10 +15,10 @@
 ## 2. Print the n first Prime numbers
 ```javascript
     function checkPrime(number){
-        //code
+        //code here
     }
     function print(n){
-        //code 
+        //code here 
         
     }
 
@@ -31,7 +30,7 @@
 ```
 ## 3. Find the Mean of given Array
 ```javascript
-    function mean(){
+    function mean(array){
         //code here
     }
     
@@ -41,7 +40,7 @@
 
 ```
 
-## 4. Check if 'x' and 'o' the same 
+## 4. Check if 'x' and 'o' are the same 
 ```javascript
     function checkXO(string){
         //code here
