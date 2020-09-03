@@ -10,10 +10,11 @@
  * 
  * Step 2 : Buat pseudocode
  * - SET angka
+ * 
  * - IF angka % 2 == 0 
  *      THEN print "Angka adalah Genap"
  *   ENDIF
- * - ELSE IF angka % 2 != 0
+ * - ELSE IF angka % 2 == 1
  *      THEN print "Angka adalah Ganjil"
  *   ENDIF
  * 
@@ -21,11 +22,11 @@
  * - Ubah pseudocode ke bahasa pemrograman
  * - Testing
  */
-// var angka = 8;
+// var angka = 85;
 // if (angka % 2 === 0) {
 //     console.log(angka + " adalah Genap.");
 // }
-// else if (angka % 2 !== 0) {
+// else if (angka % 2 === 1) {
 //     console.log(angka + " adalah Ganjil.")
 // }
 //Rumus luas persegi panjang.
@@ -51,6 +52,34 @@
  * 
  * console.log(luas)
  */
+//Rumus Lingkaran 
+
+/**
+ * Algoritma
+ * - Tau nilai pi
+ * - nilai jari2
+ * - Rumus = pi * r * r
+ * 
+ * Pseudocode 
+ * SET pi TO 3.14
+ * SET radius
+ * 
+ * luas = pi * radius * radius 
+ * PRINT luas
+ *  
+ * Coding 
+ * var luas;
+ * var pi = 3.14;
+ * var radius = 7;
+ * 
+ * luas = pi * radius * radius
+ * console.log(luas)
+ */
+// var luas;
+// var pi = 22/7;
+// var radius = 7;
+// luas = pi * radius * radius
+// console.log(luas)
 //Temukan faktor dari angka
 //Input -> 8
 //Output -> [1,2,4,8]
@@ -61,11 +90,11 @@
  * - Step 1: looping dari 1 sampai 8 untuk menemukan faktor yang sesuai
  * - Step 2: jika angka di mod dari 1 - 8 = 0 maka faktor tsb
  * 
- * Pseudocode
+ * Pseudocode 
  * SET number TO 8
  * SET factor AS AN ARRAY
  * 
- * FOR i = 1 TO i = 8
+ * FOR i = 1 TO i = number
  *      IF number % i === 0 
  *          //THEN i merupakan faktor dari number
  *          THEN i PUSH to factor     
@@ -78,7 +107,7 @@
  * var number;
  * var factor = []
  * 
- * for(let i=1;i<number;i++){
+ * for(let i=1;i<=number;i++){
  *      if(number%i===0){
  *          factor.push(i)
  *      }
@@ -128,11 +157,11 @@
  * - Print dulu kebawah / menggunakan 1 for
  * - Print secara row dan kolom / menggunakan 2 for
  * 
- * 
  */
-// for(let a=0; a<3; a++){
+// var number = 5
+// for(let i=0; i<number; i++){
 //     var star = ""
-//     for(let b=0; b<i+1; b++){
+//     for(let j=0; j<i+1; j++){
 //         star += "*"    
 //     }
 //     console.log(star);
@@ -242,20 +271,51 @@
 //  60.2.1
 //  120.1
 //  120
-var angka = 5;
-var total = 1;
-var temp = "";
+// var angka = 10;
+// var total = 1;
+// var temp = "";
+// for (let i = angka; i > 0; i--) {
+//     if (i !== 1) {
+//         // console.log(i + ".");
+//         temp += `${i}.`;
+//     }
+//     else {
+//         // console.log(i + " = ")
+//         temp += `${i} = `;
+//     }
+//     total = total * i;
+// }
+// console.log(temp, total);
+//Hitung jumlah n kuadrat pertama
+//Input -> 3 , 1 4 9
+//Ouput -> 14
 
-for (var i = angka; i > 0; i--) {
-  if (i !== 1) {
-    // console.log(i + ".");
-    temp += "".concat(i, ".");
-  } else {
-    // console.log(i + " = ")
-    temp += "".concat(i, " = ");
-  }
+/**
+ * Algoritma
+ * - Cari definisi kuadrat
+ * - Buat kuadrat 
+ * - Total smua bilangan kuadrat
+ * 
+ * Pseudocode 
+ * SET number
+ * SET total TO 0
+ * 
+ * FOR i = 1 TO i = number 
+ *     total = total + (i*i)
+ * ENDFOR
+ * 
+ * PRINT total
+ * 
+ * Coding
+ */
+var number = 10;
+var total = 0;
 
-  total = total * i;
+for (var i = 1; i <= number; i++) {
+  total = total + Math.pow(i, 2);
 }
 
-console.log(temp, total);
+console.log(total); //Input
+
+var animals = ["eagle", "ants", "flamingo", "armadillo", "entog"] //Ouput
+[(["ants", "armadillo"], ["eagle", "entog"], ["flamingo"])];
