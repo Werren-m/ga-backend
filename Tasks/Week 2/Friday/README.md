@@ -1,21 +1,23 @@
 # Exercise 
 In order to help organizing the students score.
+Mr. James asks developers to make it
+- Apps must contain these
+    - Sort the students score from the highest
+    - Group from th major
+    - Calculate the average score
 ```
+    
 ```
 
-## 1. Convert Minute to time
+## 1. Implement the "Bubble Sort" algorithm
 ```javascript
-    function convertMinute(){
+    function sortScore(){
 
     }
 
-    //Test Case
-    console.log(convertMinute(100)) //1:40
-    console.log(convertMinute(185)) //3:05
 ```
 
-## 2. Sort the letters
-Sort the letter from the word
+## 2. Implemen the "Sequential Search" algo
 ```javascript
     function sortLetter(){
         

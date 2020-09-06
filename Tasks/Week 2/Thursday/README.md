@@ -2,7 +2,7 @@
 
 ## 1. Convert Minute to time
 ```javascript
-    function convertMinute(){
+    function convertMinute(minute){
 
     }
 
@@ -14,7 +14,7 @@
 ## 2. Sort the letters
 Sort the letter from the word
 ```javascript
-    function sortLetter(){
+    function sortLetter(words){
         
     }
     
@@ -40,8 +40,11 @@ Output a random color from a given color
     var string = "Lorem ipsum is dummy text"
     
     // Using For
-
+    
     // Using While
+    function maxWordLength(){
+        
+    }
     
     // Test Case
     maxWordLength(string); //Lorem
