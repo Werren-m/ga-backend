@@ -177,4 +177,4 @@ var citiesNew = {}
 for(let i=0;i<cities.length; i++){
     citiesNew[cities[i].citiesCode] = cities[i].citiesName;
 }
-console.log(citiesNew);
+console.log(Object.keys(citiesNew).map(Number)); 

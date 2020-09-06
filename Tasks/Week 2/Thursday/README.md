@@ -11,46 +11,31 @@
     console.log(convertMinute(185)) //3:05
 ```
 
-## 2. Print the n first numbers
+## 2. Sort the letters
+Sort the letter from the word
 ```javascript
-    //Test Case
-
-    //Input 15
-    Output
-    1 
-    2
-    3 kelipatan 3
-    4
-    5 kelipatan 5
-    6 kelipatan 3
-    7
-    8
-    9 kelipatan 3
-    10 kelipatan 5
-    .
-    .
-    .
-    15 kelipatan 3 dan 5
-
-```
-## 3. Print Segitiga 
-```javascript
-    //Input 3
-    //Output
-    *
-    **
-    ***
+    function sortLetter(){
+        
+    }
     
-    // 5
-    //Output
-     *
-     **
-     ***
-     ****
-     *****
+    //Test Case
+    sortLetter("hello"); //ehllo
+```
+## 3. A random color
+Output a random color from a given color  
+```javascript
+    //Global
+    var colors = ['red','green','blue']
+    function randomColor(){
+        
+    }
+    
+    //Test Case
+    randomColor(); //Output -> Color : red
+
 ```
 
-## 4. Split words without function .split(" ")
+## 4. Split words without function .split(" ") and find the max
 ```javascript 
     var string = "Lorem ipsum is dummy text"
     
@@ -58,16 +43,30 @@
 
     // Using While
     
-    // Oupu
-    ["Lorem","ipsum","is","dummy","text"]
+    // Test Case
+    maxWordLength(string); //Lorem
 ```
 
-## 5. Find the faktorial
+## 5. Count the vowel
+Count the vowels and tunr into object
 ```javascript
-    //Faktorial 
-    3! = 3.2.1 = 6
+    function vowelsObject(apaja){
+        
+    }
 
-    //Input 5
-    //Output
-    5.4.3.2.1 = 120
+    function countVoewl(apaja){
+        
+    }
+    
+    //Test Case
+    vowelsObject("rum raisin chocolate ice cream");
+    /*
+        {
+            a : 3,
+            i : 3,
+            u : 1,
+            e : 3,
+            o : 2
+        }
+    */
 ```

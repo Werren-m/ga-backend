@@ -1,169 +1,150 @@
-//Deklarasi Variable
-var number = 10;
-// ES 5 : 2009;
-// ES 6 : 2015;
-// ES 7 : 2017; async await 
+// FPB
 
-//Initialisasi Variable
-// console.log(number);
-
-//Hoisting 
-var angka = 5;
-var Angka = 5;
-var ANGKA = 5;
-
-//Penulisan variable yg salah
-// var 1 = 1;
-// var 7number = 9;
-// var list product = 10;
-
-//Style penulisan variable
 /**
- * 1. Camel Case
- * var listProducts = [];
- * 2. Snake Case
- * var list_products = [];
- * 3. Pascal Case 
- * var ListProducts = [];
- * 4. Kebab Case
- * var list-products = [];
+ * Algoritma
+ * - Looping maju/mundur 
+ * - Cari number yg min
+ * - Definis FPB = faktor yang habis membagi ke 2 bilangan tsb
  */
 
-//Variable = tempat menampung data
+// function fpb(number1 , number2){
+//     var minNumber;
+//     if(number1 < number2){
+//         minNumber = number1;
+//     }else {
+//         minNumber = number2;
+//     }
 
-//TIPE DATA
+//     for(let i=minNumber; i >= 1; i--){
+//         if(number1 % i === 0 && number2 % i === 0){
+//             return i;
+//         }
+//     }
+// }
 
-//Number
-var x = 100;
-var y = "100"
-//  console.log(typeof y)
-//Operasi
-//Tambah, Kurang, Kali, Bagi, Modulus (%)
-//  7/3 = 2 sisa 1
-//  7%3 = 1
-// 100%7 = 2
-// 5%10 = 5
-// 225%15 = 0
+// console.log(fpb(30,50)) //10
+// console.log(fpb(12,15)) //3
+// console.log(fpb(35,17)) //1
 
-// Jenis Angka
+// Print the first n Prime numbers
 /**
- * Decimal (10)
- * 0 - 9
- * Biner (2)
- * 0 1 
- * Octal (8)
- * 0 - 7 
- * Hexadecimal (16)
- * 0 - 9 A B C D E F
+ * Algoritma
+ * - Definisi dari bilangan Prima
+ * BIlangan Prima adalah bilangan yang memiliki 2 faktor yaitu 1 dan bilangan itu sendiri
+ * - Print / Looping
  */
+// function checkPrime(number) {
+//     //code here
+//     // var faktor = [];
+//     var jumlahFaktor = 0;
+//     for (let i = 1; i <= number; i++) {
+//         if (number % i === 0) {
+//             // faktor.push(i);
+//             jumlahFaktor++;
+//         }
+//     }
+//     //Cara If ... else
+//     if (jumlahFaktor === 2) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+//     //Cara Ternary
+//     // return jumlahFaktor === 2 ? true : false;
+// }
+// function print(n) {
+//     //code here 
+//     var x=0;
+//     var number = 1;
+//     if(n === 0){
+//         console.log(1);
+//     }
+//     else{
+//         while(x < n){
+//             if(checkPrime(number)){
+//                 console.log(number);
+//                 x++;
+//             }
+//             number++;
+//         }
+//     }
+// }
 
-//String 
-var kata1 = "Hello"
-var kata2 = "World"
-var kata3 = kata1 + " " + kata2
-// console.log(kata3);
+// //Test Case
+// print(3); //2 3 5
+// print(5); //2 3 5 7 11 
+// print(0); //1
 
-//Boolean
-//True or False
-var isOn = true;
-var hadLunch = false;
-var isHot = true;
-var isCold = false;
-var isQualified = true;
+// Mean
+// function mean(array){
+//     //code here
+//     var total = 0;
+//     var average;
+//     for(let i=0;i<array.length;i++){
+//         total = total + array[i];
+//     }
+//     average = total / array.length;
 
-//Null
-var kosong = null;
-var nol = 0;
+//     return average.toFixed(3);
+// }
 
-//Undefined
-var box = undefined;
+// //Test 
+// console.log(mean([1,2,3,4,5])) //3
+// console.log(mean([3.7,5.3,7.0,1.9,3.1,0.5,1.5])) //3.28 -> 2 angka di blkg
 
-//Javascript is all about object
-//Object
-var mahasiswa = {
-    nama: "Cencent",
-    ipk: 3.21,
-    isAbleToCode: true,
-    codeJavascript: function () {
-        console.log("Hello World");
+// Check if 'x' and 'o' are the same
+// function checkXO(string){
+//     //code here
+//     var flagX = 0;
+//     var flagO = 0;
+//     for(let i=0; i<string.length; i++){
+//         if(string[i] === 'x'){
+//             flagX++;
+//         }
+//         else if(string[i] === 'o'){
+//             flagO++;
+//         }
+//     }
+
+//     if(flagX - flagO === 0){
+//         return 1;
+//     }else {
+//         return -1;
+//     }
+//     // return flagX === flagO ? 1 : -1;
+// }
+
+// //Test
+// console.log(checkXO('xxxxxooooo')) //1
+// console.log(checkXO('xxxooooo')) //-1
+// console.log(checkXO('xoxoxoxoxo')) //1
+
+// Encrypt the string 
+function swap(string){
+    //code here
+    var huruf = 'abcdefghijklmnopqrstuvwxyz';
+    var kata = '';
+
+    for (var i = 0; i < string.length; i++) {
+        for (var j = 0; j < huruf.length; j++) {
+            if (string[i] == huruf[j]) {
+                if (string[i] == 'z') {
+                    kata += 'a';
+                }
+                else kata += huruf[j + 1];
+            }
+        }
     }
+    console.log(kata);
+
+    // var encrypt = [];
+    // for (let i = 0; i < string.length; i++) {
+    //     var ascii = string.charCodeAt(i);
+    //     encrypt += String.fromCharCode(ascii + 1);
+    // }
+    // console.log(encrypt);
 }
 
-var subtotal = ((2 * 3 + 1) - 5) / 2
-// console.log(subtotal);
-
-var checklist = 1;
-checklist++;
-checklist+=1;
-checklist = checklist + 1;
-
-// console.log(checklist)
-
-// a=b tidak sama b=a
-
-//Operator Logika
- // Logika Math
-//  P      Q       P && Q      P || Q      !P 
-//  True   True    True        True        False 
-//  True   False   False       True        False
-//  False  True    False       True        True
-//  False  False   False       False       True
-
-// console.log(1 || null || 2)
-
-//ARRAY
-var apple = "Apple";
-var cherry = "Cherry";
-var banana = "Banana";
-
-var fruits = ["Apple","Cherry","Banana"];
-// var fruits = new Array()
-
-// console.log(fruits)
-// console.log(typeof fruits[0])
-// console.log(fruits[1].length)
-// console.log(fruits[2].length)
-// console.log("Jumlah data dalam array : ", fruits.length)
-
-var arrayInArray = [
-    ["Apple","Cherry"],
-    ["Potato","Carrot"],
-    ["Beef","Fish"]
-]
-// console.log(arrayInArray)
-// console.log(arrayInArray[1][1])
-
-var arrayInObject = {
-    fruits : ["Apple","Cherry"],
-    veggies : ["Potato","Carrot"],
-    meats : ["Beef", "Fish"]
-}
-console.log(arrayInObject)
-
-var arrayOfObjects = [
-    {
-        title : "Kerjain tugas",
-        isDone : true
-    },
-    {
-        title : "Makan mie",
-        isDone : false
-    },
-    {
-        title : "Kerjain lagi",
-        isDone : true
-    }
-]
-
-// JSON = JavaScript Object Notation
-
-var buah = [
-    {
-        namaBuah : "Apel",
-        kuantitas : 10
-    },
-    {
-        namaBuah : "Ceri",
-        kuantitas : 5
-    }
-]
+//Test
+swap("wow") //xpx
+swap("javascript") //kbwbtdsjqu
