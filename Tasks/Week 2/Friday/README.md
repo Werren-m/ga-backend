@@ -1,4 +1,7 @@
 # Exercise 
+In order to help organizing the students score.
+```
+```
 
 ## 1. Convert Minute to time
 ```javascript
