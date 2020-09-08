@@ -33,6 +33,8 @@ const sortLetter = (str) => {
     return string
 }
 // console.log(sortLetter("hello"));
+// console.log(sortLetter("javascript"));
+
 //3
 let colors = ["red","green","blue"];
 const randomColor = (colors) => {
@@ -42,30 +44,30 @@ const randomColor = (colors) => {
 // console.log(randomColor(colors));
 
 //4
-let string = "Lorem ipsum is dummy text";
-const splitWords = (string) => {
-    let temp = [];
-    let word = "";
+// let string = "Lorem ipsum is dummy text";
+// const splitWords = (string) => {
+//     let temp = [];
+//     let word = "";
 
-    for(let i=0;i<string.length;i++){
-        if(string[i] !== " "){
-            word += string[i];
-            // console.log(word);
-        }
-        else{
-            // console.log(word)
-            temp.push(word);
-            word = "";
-        }
+//     for(let i=0;i<string.length;i++){
+//         if(string[i] !== " "){
+//             word += string[i];
+//             // console.log(word);
+//         }
+//         else{
+//             // console.log(word)
+//             temp.push(word);
+//             word = "";
+//         }
     
-        if(i === string.length - 1){
-            temp.push(word);
-        }
-    }
-    return temp
-}
+//         if(i === string.length - 1){
+//             temp.push(word);
+//         }
+//     }
+//     return temp
+// }
 // console.log(splitWords(string));
-let arrayWords = splitWords(string);
+// let arrayWords = splitWords(string);
 // const maxWordLength = (arrayWords) => {
 //     let lengthWord = [];
 //     let currentIndex;
@@ -84,7 +86,7 @@ let arrayWords = splitWords(string);
 //     console.log(arrayWords[currentIndex])
 // }
 // let string = "Lorem ipsum is dummy text"
-
+let string = "He is programming javascript language"
 const maxWordLength = () => {
     let maxWord = "";
     let nextWord = "";
@@ -104,6 +106,7 @@ const maxWordLength = () => {
 }
 
 // console.log(maxWordLength());
+
 //5
 const vowelsObject = (string) => {
     let temp = {}
@@ -140,4 +143,4 @@ for(let i=0; i<array.length; i++){
         join += `${array[i]},`
     }
 }
-console.log(join)
+// console.log(join)
