@@ -29,7 +29,6 @@ class Barrack {
             }else if(this.slots[i].type === "Spearman"){
                 this.group.Spearman.push(this.slots[i].name)
             }else{
-                
             }            
         }
         console.log(this.group);

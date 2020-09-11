@@ -14,8 +14,6 @@ class Army{
     }
 }
 
-
-
 class Knight extends Army{
     super(name,type,level){
         this.name = name;
@@ -30,7 +28,7 @@ class Knight extends Army{
 class Archer extends Army{
     super(name,type,level){
         this.name = name;
-        this.type = "Archer";
+        this.type = type;
         this.level = level;
     }
     talk(){
@@ -41,7 +39,7 @@ class Archer extends Army{
 class Spearman extends Army{
     super(name,type,level){
         this.name = name;
-        this.type = "Spearman";
+        this.type = type;
         this.level = level;
     }
     talk(){
