@@ -15,10 +15,9 @@ class Army{
 }
 
 class Knight extends Army{
-    super(name,type,level){
-        this.name = name;
-        this.type = type;
-        this.level = level;
+
+    constructor(name,type,level){
+        super(name,type,level);
     }
     talk(){
         console.log(`I'm good with sword, I'm level ${this.level} and my name is ${this.name}`);
@@ -26,10 +25,8 @@ class Knight extends Army{
 }
 
 class Archer extends Army{
-    super(name,type,level){
-        this.name = name;
-        this.type = type;
-        this.level = level;
+    constructor(name,type,level){
+        super(name,type,level);
     }
     talk(){
         console.log(`I'm good with bow, I'm level ${this.level} and my name is ${this.name}`);
@@ -37,10 +34,8 @@ class Archer extends Army{
 }
 
 class Spearman extends Army{
-    super(name,type,level){
-        this.name = name;
-        this.type = type;
-        this.level = level;
+    constructor(name,type,level){
+        super(name,type,level);
     }
     talk(){
         console.log(`I'm good with spear, I'm level ${this.level} and my name is ${this.name}`);
