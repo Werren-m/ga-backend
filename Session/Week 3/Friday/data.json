@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "type": "Apple",
+        "age": 5,
+        "totalFruits": 100,
+        "matureAge": 5,
+        "stopProducing": 10
+    },
+    {
+        "id": 2,
+        "type": "Pear",
+        "age": 5,
+        "totalFruits": 100,
+        "matureAge": 5,
+        "stopProducing": 10
+    },
+    {
+        "id": 3,
+        "type": "Banana",
+        "age": 5,
+        "totalFruits": 100,
+        "matureAge": 5,
+        "stopProducing": 10
+    }
+]
