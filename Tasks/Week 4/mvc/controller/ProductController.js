@@ -23,7 +23,7 @@ class ProductController{
     }
     static complete(id){
         const complete = Product.complete(id);
-        View.message(complete);
+        View.message(complete); 
 
     }
     static uncomplete(id){      

@@ -32,7 +32,7 @@ switch(command){
         break;
 
     case "uncomplete":
-        controller.uncomplete(param);
+        controller.uncomplete(param)
         break;
 
     default:

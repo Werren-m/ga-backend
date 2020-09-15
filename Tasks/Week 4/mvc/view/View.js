@@ -2,9 +2,9 @@ class View{
     static list(param){
         param.forEach(element => {
     if(element.status === true){
-        console.log(`[X] ${element.task}`)
+        console.log(`[X] ${element.task}`);
     }else{
-        console.log(`[] ${element.task}`)
+        console.log(`[] ${element.task}`);
     }
     })
     }
