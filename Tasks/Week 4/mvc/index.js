@@ -1,33 +1,41 @@
-const ProductController = require("./controller/ProductController");
-
+const { help } = require('./controller/ProductController');
+const controller = require('./controller/ProductController')
 const command = process.argv[2];
-const params = process.argv.slice[3];
-const ProductControllers = require('./controller/ProductController.js')
-
+const param = process.argv.slice(3);
 
 switch(command){
+    case "help":
+        // let controlList = new controller().help;
+        // console.log(controlList)
+        // help(controller);
+        // console.log(Object.getOwnPropertyNames(controller.prototype).filter(x => x !== 'constructor'));        
+        break;
+    
     case "list":
-        // console.log("list");
-        ProductControllers.list();
+        controller.list();
         break;
+    
     case "add":
-        ProductControllers.add(params);
-        // console.log("Add");
+        controller.add(param);
         break;
-    case "delete":
-        ProductControllers.delete();
-        // console.log("Delete");
-        break;
+
     case "update":
-        ProductControllers.update();
-        // console.log("Update");
+        controller.update(param);
         break;
+    
+    case "delete":
+        controller.delete(param);
+        break;
+
+    case "complete":
+        controller.complete(param);
+        break;
+
+    case "uncomplete":
+        controller.uncomplete(param);
+        break;
+
     default:
-        console.log("Please input a legit command");
+        console.log("Please input a valid command!!");
         break;
 }
-
-
-// Flow MVC 
-// 1. User input terminal ke index -> index.js
-// 2. Logic flow: index -> Controller -> Model -> Controller -> View
