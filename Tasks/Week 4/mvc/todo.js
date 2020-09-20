@@ -9,6 +9,7 @@ switch(command){
         // console.log(controlList)
         // help(controller);
         // console.log(Object.getOwnPropertyNames(controller.prototype).filter(x => x !== 'constructor'));        
+        controller.help();
         break;
     
     case "list":

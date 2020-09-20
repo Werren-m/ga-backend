@@ -4,31 +4,69 @@ const View = require('../view/View');
 
 class ProductController{
     static list(){
-        const list = Product.list();
-        View.list(list);       
+        // const list = Product.list();
+        // View.list(list); 
+        Product.list((err, data) => {
+            if(err){
+                View.error(err);
+            }
+            else{
+                View.list(data);
+            }
+        })      
     }
     static help(){
+        View.help();
     }
     static add(param){
-        const add = Product.add(param);
-        View.message(add);
+        Product.add(param, (err,data) =>{
+            if(err){
+                View.err(err);
+            }else{
+                View.message(data);
+            }
+        })
     }
     static update(param){
-        const update = Product.update(param);
-        View.message(update);
+        Product.update(param, (err,data) =>{
+            if(err){
+                View.error(err);
+            }else{
+                View.message(data);
+            }
+        })
     }
     static delete(id){
-        const del = Product.delete(id);
-        View.message(del);
+        Product.delete(id, (err,data) => {
+            if(err){
+                View.err(err);
+            }else{
+                View.message(data);
+            }
+        })
     }
     static complete(id){
-        const complete = Product.complete(id);
-        View.message(complete); 
+        // const complete = Product.complete(id);
+        // View.message(complete); 
+        Product.complete(id,(err,data) => {
+            if(err){
+                View.error(err);
+            }else{
+                View.message(data);
+            }
+        });
 
     }
     static uncomplete(id){      
-        const uncomplete = Product.uncomplete(id);
-        View.message(uncomplete);
+        // const uncomplete = Product.uncomplete(id);
+        // View.message(uncomplete);
+        Product.uncomplete(id, (err, data) => {
+            if(err){
+                View.error(err);
+            }else{
+                View.message(data);
+            }
+        })
     }
 }
 
