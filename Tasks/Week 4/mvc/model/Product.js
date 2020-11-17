@@ -11,104 +11,159 @@ class Product{
         this.completed_at = completed_at;
     }
 
-    static list(){
-        const data = this.getJSON();
-        let tempData = [];
-        data.forEach(el => {
-            const {id, task, status, tag, created_at, completed_at} = el;
-            tempData.push(new Product(id,task,status,tag,created_at,completed_at));
-        })
-        return tempData;
-    }
+    static list(cb){
+        // const data = this.getJSON();
+        // let tempData = [];
 
-    static add(param){
-        const tasks = this.list();
-        const [task,status,tag] = param;
+        // data.forEach(el => {
+        //     const {id, task, status, tag, created_at, completed_at} = el;
+        //     tempData.push(new Product(id,task,status,tag,created_at,completed_at));
+        // })
+        // return tempData;
 
-        const tempProduct = {
-            id: this.getId(),
-            task: task,
-            status: (status === "true"),
-            tag: tag || [],
-            created_at: new Date(),
-            completed_at: null
-        }
-        tasks.push(tempProduct);
-        this.save(tasks);
-        return `${task} has been added successfully!!`;
-    }
+        fs.readFile('./data.json', 'utf8', (err, data) => {
+            if (err) {
+                cb(err, null);
+            }
+            else {
+                const parseData = JSON.parse(data);
 
-    static delete(id){
-        const tasks = this.list();
-        let task = "";
-        tasks.forEach(el => {
-            if(el.id === Number(id)){
-                task = el.task;
+                let tempData = [];
+                parseData.forEach(element => {
+                    const { id, task, status, tag, created_at,completed_at } = element;
+                    tempData.push(new Product(id, task, status, tag, new Date(created_at), new Date(completed_at)));
+                });
+                cb(null, tempData);
             }
         })
-        const filteredTasks = tasks.filter(el => el.id !== Number(id));
-        if(filteredTasks.length === tasks.length){
-            return 'ID not found!!'
-        }else{
-            this.save(filteredTasks);
-            return `${task} has been deleted succesfully!!`;
-        }
     }
 
-    static complete(id){
-        const tasks = this.list();
-        let task = "";
-        tasks.forEach(el => {
-            if(el.id === Number(id)){
-                el.completed_at = new Date();
-                el.status = true;
-                task = el.task;
+    static add(param,cb){
+        // const tasks = this.list();
+        this.list((err, data) => {
+            if(err){
+
+                cb(err,null);
+
+            }else{
+                
+                const [task,status,tag] = param;
+                const nextId = data[data.length - 1].id + 1;
+
+                const tempProduct = {
+                id: nextId,
+                task: task,
+                status: (status === "true"),
+                tag: tag || [],
+                created_at: new Date(),
+                completed_at: null
             }
-        })
-        this.save(tasks);
-        if(task.length === 0){
-            return `Invalid ID!!`;
-        }else{
-            return `${task} has been completed!!`;
-        }
+            data.push(tempProduct);
+            this.save(data);
+            cb(null,`${tempProduct.task} has been added successfully!!`);
+            }
+        });
     }
 
-    static uncomplete(id){
-        const tasks = this.list();
-        let task = "";
-        tasks.forEach(el => {
-            if(el.id === Number(id)){
-                el.completed_at = null;
-                el.status = false;
-                task = el.task;
+    static delete(id,cb){
+        // const tasks = this.list();
+        this.list((err,data) => {
+            if(err){
+                cb(err,null);
+            }else{
+                let task = "";
+                data.forEach(el => {
+                    if(el.id === Number(id)){
+                        task = el.task;
+                     }
+                })
+                const filteredTasks = data.filter(el => el.id !== Number(id));
+                if(filteredTasks.length === data.length){
+                    cb(null,'ID not found!!'); 
+                }else{
+                    this.save(filteredTasks);
+                    cb(null,`${task} has been deleted succesfully!!`);
+                }
             }
         })
-        this.save(tasks);
-        if(task.length === 0){
-            return `Invalid ID!!`;
-        }else{
-            return `${task} has been uncompleted!!`;
-        }
     }
 
-    static update(param){
-        const tasks = this.list();
-        const tasksClone = this.list();
-        const [id, task] = param;
-        let count = 0;
-        let temp="";
-        tasks.forEach(el =>{
-            if(el.id == Number(id)){
-                temp = el.task;
-                el.task = task;
+    static complete(id,cb){
+        // const tasks = this.list();
+        this.list((err,data) => {
+            if(err){
+                cb(err,null);
+            }else{
+                let task = "";
+                data.forEach(el => {
+                    if(el.id === Number(id)){
+                        el.completed_at = new Date();
+                        el.status = true;
+                        task = el.task;
+                    }
+                })
+                this.save(data);
+                if(task.length === 0){
+                    cb(null,`Invalid ID!!`);
+                }else{
+                    cb(null,`${task} has been completed!!`);
+                }
             }
         })
-        this.save(tasks);
-        if(tasks == tasksClone){
-            return `Invalid ID`
-        }else{
-            return `${temp} has been updated to ${task}`
-        }
+                
+    }
+
+    static uncomplete(id,cb){
+        // const tasks = this.list();
+        this.list((err,data) => {
+            if(err){
+                cb(err);
+            }else{
+                let task = "";
+                data.forEach(el => {
+                    if(el.id === Number(id)){
+                    el.completed_at = null;
+                    el.status = false;
+                    task = el.task;
+                }
+                })
+                this.save(data);
+                if(task.length === 0){
+                    cb(null,`Invalid ID!!`);
+                }else{
+                    cb(null,`${task} has been uncompleted!!`);
+                }
+
+            }
+        })
+        
+    }
+
+    static update(param,cb){
+        this.list((err,data) => {
+            if(err){
+                cb(err,null);
+            }else{
+                const tasksClone = data;
+                const [id, task] = param;
+                let count = 0;
+                let temp="";
+                data.forEach(el =>{
+                    if(el.id == Number(id)){
+                        temp = el.task;
+                        el.task = task;
+                        count++
+                    }
+                })
+                console.log(count);
+                this.save(data);
+                if(count === 0){
+                    cb(null,`Invalid ID`)
+                }else{
+                    cb(null,`${temp} has been updated to ${task}`)
+                }
+            }
+        })
     }
 
     static getId(){

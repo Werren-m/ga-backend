@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Pikachu",
+        "major": "Electrical Engineering",
+        "score": 95
+    },
+    {
+        "name": "Charmender",
+        "major": "Industrial Engineering",
+        "score": 90
+    },
+    {
+        "name": "Bulbasair",
+        "major": "Agriculture",
+        "score": 80
+    }
+]
