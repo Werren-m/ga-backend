@@ -41,3 +41,6 @@ class OtherTree extends FruitTree{
     }
 }
 
+class Tree{
+    
+}
